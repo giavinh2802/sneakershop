@@ -59,3 +59,22 @@ Vì vậy, kiến ​​trúc cuối cùng của dự án phản ứng của ch�
 
 Phần kết luận
 Đây là một trong những kiến trúc được sử dụng nhiều nhất. Như tôi đã đề cập, không có kiến trúc tốt nhất sẽ phù hợp với mọi dự án. Tôi thay đổi các yêu cầu nhưng luôn nhớ duy trì cấu trúc thư mục để mọi mã được tập trung và dễ dàng hiểu bởi bất kỳ nhà phát triển nào.
+
+
+Nguyên Tắc Cơ Bản Khi Làm Việc Nhóm Với Git
+1. Luôn tạo branch mới
+Luôn bắt đầu một task bằng một branch mới được tách từ một trong các branch chính được cập nhật mới nhất (master / develop / stable)
+Tên của branch mới có thể sử dụng task id trong hệ thống quản lý task hoặc mô tả ngắn gọn (features/user_registration_api)
+2. Tuân thủ nguyên tắc đặt tên commit message
+Chi tiết xem tại bài viết trước
+3. Commit / review sớm và thường xuyên
+Nhằm giữ branch feature và branch chính gần nhau nhất có thể, việc này giúp:
+Cập nhật tình hình phát triển của dự án
+Giữ thành viên trong team luôn ở phiên bản mới nhất của branch chính
+Giảm xung đột khi tiến hành merge branch
+4. Mỗi commit chỉ thực hiện một nhiệm vụ
+Rule này vô cùng quan trọng khi review / debug code. Thực hiện nhiều nhiệm vụ trong cùng một commit sẽ gây rất nhiều khó khăn cho các thành viên còn lại trong team để hiểu về commit đó.
+Ví dụ: Commit “CPS-123: Add shopping cart api “ có sửa đổi cả file template.html hay .gitignore là một commit không đúng chuẩn.
+Tip: Tuân thủ quy tắc đặt tên commit message với danh sách động từ (Add / Drop / Fix / Bump / Make / Refactor / Optimize / Reformat / Repharse / Document) là cách đơn giản để nhắc nhở bản thân luôn.
+5. Không commit file không liên quan
+Một trong các lỗi phổ biến nhất của lập trình viên là commit rất nhiều file không liên đến dự án. Ví dụ như file cấu hình được khởi tạo bởi IDE hay file test sinh ra trong quá trình lập trình chức năng.
