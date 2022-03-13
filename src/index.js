@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./Assets/Styles/index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 
-import { createStore } from 'redux'
+import { createStore } from "redux";
 
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
+
 
 import rootReducer from './redux/reducers'
 // React Bootstrap
@@ -21,12 +21,9 @@ import Layout from "./Components/Layout/Layout"
 import DetailCustomer from "./Pages/Dashboard/DetailCustomer"
 import Login from "./Pages/Login/Login";
 
+const store = createStore(rootReducer);
 
-const store = createStore(
-  rootReducer
-)
-
-document.title = 'Sneaker Shop'
+document.title = "Sneaker Shop";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -34,11 +31,5 @@ ReactDOM.render(
       <Layout/>
     </React.StrictMode>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
