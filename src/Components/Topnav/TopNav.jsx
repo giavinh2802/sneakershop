@@ -38,7 +38,7 @@ const renderUserToggle = (user) => (
 
 //Trả menu của User
 const renderUserMenu =(item, index) => (
-    <Link to='/' key={index}>
+    <Link to='/login' key={index}>
         <div className="notification-item">
             <i className={item.icon}></i>
             <span>{item.content}</span>
@@ -49,10 +49,7 @@ const renderUserMenu =(item, index) => (
 const TopNav = () => {
   return (
     <div className='topnav'>
-        <div className="topnav__search">
-            <input type="text" placeholder='Search here...' />
-            <i className='bx bx-search'></i>
-        </div>
+        <h1>ADMIN - SneakerShop.</h1>
         <div className="topnav__right">
             <div className="topnav__right-item">
                 {/* dropdown here */}

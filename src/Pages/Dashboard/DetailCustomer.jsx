@@ -1,25 +1,22 @@
 import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
-
 import Table from "../../Components/Table/Table";
 
 import "../../Assets/Styles/Customer.css";
 
 import customerList from "../../Assets/JsonData/customers-list.json";
 
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Form, Col } from "react-bootstrap";
 
-import DetailCustomer from "../../Pages/Dashboard/DetailCustomer";
-
-import DeleteForm from '../../Components/Modal/DeleteForm'
-
+import AddCustomers from "../../Components/Modal/AddCustomers";
 const customerTableHead = [
-  "",
-  "name",
-  "email",
+  "order id",
+  "time",
+  "shipping",
   "phone",
+  "method",
   "total orders",
+  "status",
   "actions",
 ];
 
@@ -27,36 +24,34 @@ const renderHead = (item, index) => <th key={index}>{item}</th>;
 
 const renderBody = (item, index) => {
   return (
-    <tr className="actions" key={index}>
+    <tr key={index}>
       <td>{item.id}</td>
       <td>{item.name}</td>
       <td>{item.email}</td>
       <td>{item.phone}</td>
       <td>{item.total_orders}</td>
+      <td>{item.total_orders}</td>
+      <td><span className="status">Delivered</span></td>
       <td>
-        <Link to="/detailcustomer">
-          <i class="bx bx-show-alt icon__actions-detail"></i>
-        </Link>
-        <i class="bx bx-trash icon__actions-delete"></i>
+        <Form.Group className="group-actions mb-3" as={Col} controlId="formGridState">
+          <Form.Select defaultValue="Processing">
+          <option>Processing</option>
+          <option>Delivered</option>
+          <option>Pending</option>
+          </Form.Select>
+        </Form.Group>
       </td>
     </tr>
   );
 };
 
-const Customers = () => {
+const DetailCustomer = () => {
   return (
     <div>
       <div className="page-header">
-        <h2 className="page-header__text">customers</h2>
-        <div className="topnav__search">
-          <input type="text" placeholder="Search here..." />
-          <i className="bx bx-search"></i>
-        </div>
-        <Button className="page-header__button">
-          <i className="bx bx-plus-medical page-header__button-icon "></i>
-          Add
-        </Button>
+        <h2 className="page-header__text">Detail Customer</h2>
       </div>
+
       <div className="row">
         <div className="col-12">
           <div className="card">
@@ -76,4 +71,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default DetailCustomer;

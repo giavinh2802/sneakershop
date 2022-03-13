@@ -22,9 +22,13 @@ td {
     padding: 15px 10px;
 }
 
-tbody > tr:hover {
+tbody > tr:hover > td{
     background-color: var(--main-color);
     color: var(--txt-white);
+}
+
+tbody > tr:hover{
+    opacity: 0.8 !important;
 }
 
 .table__pagination {

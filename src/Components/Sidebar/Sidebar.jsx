@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 import '../Sidebar/Sidebar.css'
-import logo from '../../Assets/images/logo.png'
+import logo from '../../Assets/images/LogoSneaker.png'
 
 import sidebar_items from '../../Assets/JsonData/sidebar_routes.json'
 

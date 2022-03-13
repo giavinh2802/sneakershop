@@ -1,9 +1,9 @@
 import "./Assets/Styles/App.css";
-
+import Navbar from './Components/Client/Navbar'
 const App = () => {
   return (
     <div className="App">
-      <h1>This is App Page</h1>
+      <Navbar />
     </div>
   );
 };
